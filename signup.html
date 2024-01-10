@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Register and Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body style="background-image:url(img/homepage_connection_2000x.jpg); background-repeat:no-repeat; background-attachment: fixed;background-size: cover;opacity: 0.9">
+    <div id="sign-up">
+        <form id="signup_form" action="actions.php" method ="post" enctype="multipart/form-data">
+            <h1 class="text-center">Register </h1> <br>
+            <div class="form-group">
+                <label for="val-userName"><strong>Full Name</strong></label>
+                <div>
+                    <input type="text" id="val-userName" name="userName" placeholder="Enter Full Name..">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="val-address"><strong>Address</strong></label>
+                <div>
+                    <input type="text"  id="val-address" name="address" placeholder="Enter your address..">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="val-id"><strong>NIC Number</strong></label>
+                <div>
+                    <input type="text"  id="val-id" name="nic" placeholder="Enter the NIC..">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="val-email"><strong>Email</strong></label>
+                <div>
+                    <input type="email"  id="val-email" name="email" placeholder="Enter Email..">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="val-password"><strong>Password</strong></label>
+                <div>
+                    <input type="password"   id="val-password" name="password" placeholder="Enter Password..">
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit" class="button" href="signin.html">Register</button>
+            </div>
+            
+        <div class="new-account mt-3">
+            <p>Already have an account? <a class="text-primary" href="signin.html" data-toggle="tab">Login</a></p>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,889 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+  position: relative;
+  padding: 0 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3% 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  width: 70px;
+  height: 60px;
+  border-radius: 10px;
+}
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-left: 40px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+ul li button{
+  border: 1px;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.content{
+  text-align: center;
+}
+.content h1{
+  font-size: 100px;
+  color: white;
+  font-weight: 600;
+}
+.content a{
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-size: 25px;
+  border: 2px solid #fff;
+  padding: 8px 50px;
+  border-radius: 52px;  
+}
+.content a:hover{
+text-decoration: none;
+display: inline-block;
+color: rgb(0, 0, 0);
+background: #fff;
+}
+.vdo{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media(min-aspect-ratio:16/8){
+  .vdo{
+      width: 100%;
+      height: auto;
+  }
+}
+@media(max-aspect-ratio:16/8){
+  .vdo{
+      width: auto;
+      height: 100%;
+  }
+}
+
+.sub{
+  padding: 2%;
+  height: 670px;
+}
+
+.sub h2{
+  margin-top: 12px;
+  text-align: center;
+}
+.cards{
+  padding: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 33.3%;
+  padding: 50px 18px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 40px;
+}
+.card img{
+  border-radius: 40px;
+}
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.card p{
+  margin-top: -150px;
+  margin-left: -10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stories{
+  padding: 1%;
+}
+.stories h2{
+  text-align: center;
+  margin-top: 110px;
+  padding: 2%;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+.roww {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+/* Create four equal columns that sits next to each other */
+.col {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.col img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .col {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+.footer-distributed{
+	background: #1D5C5E;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #fff;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #1D5C5E;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  rgb(255, 255, 255);
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background:#000000;
+	border-radius: 20px;
+  font-size: 20px;
+	text-align: center;
+	line-height: 35px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+
+
+/*............About us...................*/
+.VISION{
+  position: relative;
+  margin: 50px;
+  text-decoration: bold;
+  text-align: center;
+  font-size: large;
+  font-family:Arial;
+}
+.MISION{
+  position: relative;
+  margin: 50px;
+  text-decoration: bold;
+  text-align: center;
+  font-size: large;
+  font-family:Arial ;
+}
+.ABOUT_JEWEL_AURA{
+  position: relative;
+  margin: 50px;
+  text-decoration: bold;
+  text-align: center;
+  font-size: large;
+  font-family:Arial ;
+}
+
+*{
+  margin: 0px;
+  padding:0px;
+  color: #000000;
+}
+.cards{
+  padding: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-shadow: 8px 8px 8px 8px rgba(190, 189, 189, 0.2);
+  text-align: center;
+  background-color:transparent;
+  border-radius: 40px;
+  
+}
+.card:hover{
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(153, 153, 153, 0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+.image img{
+  width:600px;
+  border-radius: 40px;
+  height:300px;
+  align-items: center;
+  margin: 100px 100px 100px 100px;
+}
+.title{
+  text-align: center;
+  font-family:Arial ;
+
+}
+.des{
+  text-align:center;
+  font-family:Arial ;
+  font-size: large;
+}
+
+
+/*.................................Terms & conditions...........................*/
+.Terms_Conditions{
+  position: relative;
+  margin: 50px;
+  text-decoration: bold;
+  text-align: center;
+  font-size: large;
+  font-family:Arial ;
+
+}
+.tc{
+  position: relative;
+  margin: 50px;
+  text-decoration: bold;
+  text-align: left;
+ font-size: x-large;
+  font-family:Arial ;
+
+}
+.terms{
+  position: relative;
+  margin: 50px;
+  text-decoration: bold;
+  text-align: left;
+  font-size: large;
+  font-family:Arial ;
+ color: #fff;
+  
+
+}
+
+/*....Signin Signup.........*/
+
+form {
+  background-color: #fff;
+  border: 1px solid #979696;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #000000;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.button {
+  background-color: #1D5C5E;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 12px;
+  display: flex;  
+justify-content: center;  
+align-items: center;  
+}
+
+
+/*............privacy policies.............*/
+.privacy_policies{
+  width: 100%;
+  height:auto;
+  background-image: linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+  position: relative;
+  padding: 0 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.privacy{
+  height: auto;
+  margin-top: 5vh;
+}
+
+.privacy ul li{
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.privacy h1{
+  margin-bottom: 10px;
+}
+
+.privacy p{
+  margin-bottom: 10px;
+}
+
+.p_p{
+  position: relative;
+  margin-top: 100px;
+  text-decoration: bold;
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial ;
+
+}
+
+.Introduction{
+  position:relative;
+  margin: 50px;
+  text-align: center;
+  font-size:larger;
+  font-family: Arial;
+
+}
+
+.Information_We_Collect{
+  position: relative;
+  margin: 50px;
+  text-align: center;
+  font-size:larger;
+  font-family:Arial ;
+}
+
+.How_We_Use_Your_Information{
+  position: relative;
+  margin: 50px;
+  text-align: center;
+  font-size:larger;
+  font-family:Arial ;
+}
+
+.Data_Security{
+  position: relative;
+  margin: 50px;
+  text-align: center;
+  font-size:larger;
+  font-family:Arial ;
+}
+
+.Changes_to_Our_Privacy_Policy{
+  position: relative;
+  margin: 50px;
+  text-align: center;
+  font-size:larger;
+  font-family:Arial ;
+}
+
+.Contact_Us{
+  position: relative;
+  margin: 50px;
+  text-align: center;
+  font-size:larger;
+  font-family:Arial ;
+}
+
+
+/*............Servicers...................*/
+
+
+.headline h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: rgb(248, 248, 243); /* White text color for the headline */
+  font-size: 50px;
+  font-weight: bold;
+  font-size: 70px;
+}
+
+.services {
+  text-align: center;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.service-card {
+  background-color: rgba(243, 198, 230, 0.146); /* Semi-transparent white background */
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: left; /* Align text to the left */
+  width: 40%  40%;
+  
+}
+.service-card img {
+  width: 50%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.service-card h1 {
+  color: #0b0b0b; /* Set text color for service subtitles */
+  text-align: center;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: #141414; /* Set text color for service descriptions */
+}
+
+/* Buy and Sell  */
+.button-container {
+  text-align: center;
+}
+
+.buy-button,
+.sell-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #3498db;
+  color: #3498db;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.sell-button {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.buy-button:hover,
+.sell-button:hover {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+
+/*............Contact us...................*/
+
+@import url('https://razak.com.my/wp-content/uploads/2017/11/WHDQ-512753667.jpg');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+.container{
+    min-height: 100vh;
+    background: #08071d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(C1.png.jpg) no-repeat center center/cover;
+}
+
+.container form{
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.581);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+}
+
+.container form h1{
+    color: #fff;
+    font-weight: 500;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+.container form input{
+    width: 290px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    color: #ddd;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid #fff
+}
+
+.container form input::placeholder{
+    color: #ddd;
+}
+
+.container form #lastName,
+.container form #mobile{
+    margin-left: 20px;
+}
+
+.container form h4{
+    color: #fff;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.container form textarea{
+    background: none;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+textarea::-webkit-scrollbar{
+    width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb{
+    background-color: rgba(194,194,194,0.713);
+}
+
+.container form #button{
+    border: none;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    width: 100px;
+    padding: 0;
+    margin-right: 500px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.container form #button:hover{
+    opacity: 0.7;
+}
+
+/*............Refund Policies*............*/
+
+.service-card h1 {
+  color: #0b0b0b; /* Set text color for service subtitles */
+  text-align: center;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.service-card S-T {
+  font-size: 15px;
+  color: #141414; /* Set text color for service descriptions */
+}
+

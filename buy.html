@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Buy Form</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <body style="background-image:url(img/servicers\ 3.avif); background-repeat:no-repeat; background-attachment: fixed;background-size: cover;opacity: 0.9">
+<div class="buy-form-container" id="buy-form-container">
+  <form action="#" method="post" class="gold-form">
+    <h2 id="buy-form-title">Buy Gold Form</h2>
+
+    <label for="buy-metal">Metal:</label>
+    <select name="buy-metal" id="buy-metal" required>
+      <option value="gold">Gold</option>
+    </select>
+
+    <label for="buy-condition">Condition:</label>
+    <input type="text" name="buy-condition" id="buy-condition" required>
+
+    <label for="buy-type">Type:</label>
+    <select name="buy-type" id="buy-type" required>
+      <option value="necklace">Necklace</option>
+      <option value="ring">Ring</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <label for="buy-karat">Karat:</label>
+    <select name="buy-karat" id="buy-karat" required>
+      <option value="24k">24k</option>
+      <option value="22k">22k</option>
+      <option value="18k">18k</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <label for="buy-unit">Unit:</label>
+    <select name="buy-unit" id="buy-unit" required>
+      <option value="kg">Kilogram (kg)</option>
+      <option value="g">Gram (g)</option>
+      <option value="mg">Milligram (mg)</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <label for="buy-photos">Photos:</label>
+    <input type="file" name="buy-photos" id="buy-photos" accept="image/*" multiple>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>

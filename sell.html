@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold Sell Form</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <body style="background-image:url(img/servicers\ 3.avif); background-repeat:no-repeat; background-attachment: fixed;background-size: cover;opacity: 0.9">
+<div class="sell-form-container" id="sell-form-container">
+  <form action="#" method="post" class="gold-silver-form" enctype="multipart/form-data">
+    <h2 id="sell-form-title">Sell Gold Form</h2>
+
+    <label for="sell-metal">Metal:</label>
+    <select name="sell-metal" id="sell-metal" required>
+      <option value="gold">Gold</option>
+    </select>
+
+    <label for="sell-condition">Condition:</label>
+    <input type="text" name="sell-condition" id="sell-condition" required>
+
+    <label for="sell-type">Type:</label>
+    <select name="sell-type" id="sell-type" required>
+      <option value="necklace">Necklace</option>
+      <option value="ring">Ring</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <label for="sell-karat">Karat:</label>
+    <select name="sell-karat" id="sell-karat" required>
+      <option value="24k">24k</option>
+      <option value="22k">22k</option>
+      <option value="18k">18k</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <label for="sell-unit">Unit:</label>
+    <select name="sell-unit" id="sell-unit" required>
+      <option value="kg">Kilogram (kg)</option>
+      <option value="g">Gram (g)</option>
+      <option value="mg">Milligram (mg)</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <!-- Input for photo upload -->
+    <label for="sell-photo">Upload Photo:</label>
+    <input type="file" name="sell-photo" id="sell-photo" accept="image/*">
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
