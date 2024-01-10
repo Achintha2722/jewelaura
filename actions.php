@@ -30,6 +30,6 @@
 				. mysqli_error($conn);
 		}
 		
-		// Close connection
+		// Close connection test
 		mysqli_close($conn);
 		?>
