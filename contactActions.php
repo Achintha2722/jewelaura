@@ -1,61 +1,65 @@
 <?php
-        if (isset($_POST["submit"])) {
-           $firstName = $_POST["first_name"];
-           $lastName = $_POST["last_name"];
-           $email = $_POST["email"];
-           $mobile = $_POST["mobile"];
-           $message= $_POST["message"];
-           
-           $errors = array();
-           
-           if (empty($firstName) OR empty($laststName) OR empty($email) OR empty($mobile) OR empty($message)) {
-            array_push($errors,"All fields are required");
-           }
-           if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            array_push($errors, "Email is not valid");
-           }
-           if (strlen($mobile)<10) {
-            array_push($errors,"Mobile must be at least 10 charactes long");
-           }
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
 
-           // Check connection
-		if($conn === false){
-			die("ERROR: Could not connect. "
-				. mysqli_connect_error());
-		}
-		
-		// $userName = $_REQUEST['userName'];
-        // $address = $_REQUEST['address'];
-        // $nic = $_REQUEST['nic'];
-        // $email = $_REQUEST['email'];		
-		// $password = $_REQUEST['password'];
-		
+    $conn = mysqli_connect("localhost", "root", "", "jewelaura_db");
 
-		$sql = "INSERT INTO contacts VALUES ('$id','$firstName','$lastName','$email','$mobile','$message')";
+    // Check connection
+    if ($conn === false) {
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
 
-		
-		if(mysqli_query($conn, $sql)){
-			// echo $_SESSION['Email'] = $Email;
-			header("location:signin.html");
-		} else{
-			// echo "ERROR: Hush! Sorry, Invalid Login Credentials. $sql. "
-			// 	. mysqli_error($conn);
-		}
-		
-		// Close connection
-		mysqli_close($conn);
+    $firstName = mysqli_real_escape_string($conn, $_POST['firstName']);
+    $lastName = mysqli_real_escape_string($conn, $_POST['lastName']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
 
-        //    require_once "connection.php";
-            
-        //    $sql = "INSERT INTO contacts (first_name, last_name, email, mobile, message) VALUES ( ?, ?, ?, ?, ? )";
-        //    $stmt = mysqli_stmt_init($conn);
-        //    $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
-        //    if ($prepareStmt) {
-        //         // mysqli_stmt_bind_param($stmt,"sss",$fullName, $email, $passwordHash);
-        //         mysqli_stmt_execute($stmt);
-        //         echo "<div class='alert alert-success'>Thank you for contact us.</div>";
-        //    }else{
-        //         die("Something went wrong");
-        //    }
-        }
-        ?>
+    // Validation
+    $errors = array();
+
+    if (empty($firstName)) {
+        $errors['firstName'] = 'First Name is required.';
+    }
+
+    if (empty($lastName)) {
+        $errors['lastName'] = 'Last Name is required.';
+    }
+
+    if (empty($email)) {
+        $errors['email'] = 'Email is required.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = 'Invalid email format.';
+    }
+
+    if (empty($mobile)) {
+        $errors['mobile'] = 'Mobile is required.';
+    } elseif (!preg_match('/^\d{10}$/', $mobile)) {
+        $errors['mobile'] = 'Mobile must have 10 numbers.';
+    }
+
+    if (empty($message)) {
+        $errors['message'] = 'Message is required.';
+    }
+
+    // If there are validation errors, send them back to the form
+    if (!empty($errors)) {
+        session_start();
+        $_SESSION['errors'] = $errors;
+        header("Location: contact.php");
+        exit;
+    }
+
+    // Proceed with the database insertion
+    $sql = "INSERT INTO contacts (firstName, lastName, email, mobile, message) VALUES ('$firstName', '$lastName', '$email', '$mobile', '$message')";
+
+    if (mysqli_query($conn, $sql)) {
+        echo $_SESSION['Email'] = $email;
+        header("location: index.html");
+    } else {
+        echo "ERROR: Unable to insert data. " . mysqli_error($conn);
+    }
+
+    // Close connection
+    mysqli_close($conn);
+?>
